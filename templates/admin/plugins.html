@@ -1,0 +1,84 @@
+<% e.inherit("./page.html"); %>
+
+<% e.begin_define_block("title"); %>Plugin manager - Carabiner<% e.end_define_block(); %>
+
+<% e.begin_define_block("body-content"); %>
+  <h2>Installed plugins</h2>
+  <table class="installed-results">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Version</th>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody class="template">
+      <tr id="installed-plugin-template">
+        <td class="name" data-label="Name"></td>
+        <td class="description" data-label="Description"></td>
+        <td class="version" data-label="Version"></td>
+        <td>
+          <div class="actions">
+            <input type="button" value="Uninstall" class="do-uninstall">
+            <div class="progress"><p class="loadingAnimation"></p><p><span class="message"></span></p></div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tbody id="installed-plugins">
+    </tbody>
+    <tbody class="messages">
+        <tr><td></td><td>
+          <p class="nothing-installed">You haven't installed any plugins yet.</p>
+          <p class="fetching"><p class="loadingAnimation"></p><br/>Fetching installed plugins...</p>
+        </td><td></td></tr>
+      </tbody>
+  </table>
+
+  <div class="paged listing search-results">
+    <div class="separator"></div>
+
+    <h2>Available plugins</h2>
+    <form>
+      <input type="text" name="search" disabled placeholder="Search for plugins to install" id="search-query">
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="sort up"   data-label="name">Name</th>
+          <th class="sort none" data-label="description">Description</th>
+          <th class="sort none" data-label="version">Version</th>
+          <th class="sort none" data-label="time">Last update</th>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody class="template">
+        <tr>
+          <td class="name" data-label="Name"></td>
+          <td class="description" data-label="Description"></td>
+          <td class="version" data-label="Version"></td>
+          <td class="time" data-label="Time"></td>
+          <td>
+            <div class="actions">
+              <input type="button" value="Install" class="do-install">
+              <div class="progress"><p><p class="loadingAnimation"></p></p><p><span class="message"></span></p></div>
+            </div>
+         </td>
+        </tr>
+      </tbody>
+      <tbody class="results">
+      </tbody>
+      <tbody>
+        <tr><td></td><td>
+          <div class="messages">
+            <div id="search-progress" class="progress"><p>&nbsp;</p></div>
+            <p class="nothing-found">No plugins found.</p>
+            <p class="fetching"><p class="loadingAnimation"></p><br/>Fetching...</p>
+          </div>
+        </td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+<% e.end_define_block(); %>

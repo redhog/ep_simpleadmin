@@ -1,0 +1,24 @@
+<% e.inherit("ep_express/templates/page.html"); %>
+
+<% e.begin_define_block("styles"); %>
+  <link rel="stylesheet" href="/static/plugins/ep_simpleadmin/static/css/admin.css">
+<% e.end_define_block(); %>
+
+<% e.begin_define_block("body-wrapped"); %>
+  <% e.begin_block("menu"); %>
+    <div class="menu">
+      <h1><a href="../">Carabiner</a></h1>
+      <ul>
+        <% e.begin_block("menuContent"); %>
+          <li><a href="/admin/plugins">Plugin manager</a> </li>
+          <li><a href="/admin/plugins/info">Troubleshooting information</a> </li>
+        <% e.end_block(); %>
+      </ul>
+    </div>
+  <% e.end_block(); %>
+
+  <div class="innerwrapper">
+    <% e.begin_block("body-content"); %>
+    <% e.end_block(); %>
+  </div>
+<% e.end_define_block(); %>

@@ -1,0 +1,34 @@
+<% e.inherit("./page.html"); %>
+
+<%
+  var versions = require('ep_carabiner/node/utils/versions');
+  var gitCommit = versions.getGitCommit();
+  var pkgVersion = versions.getPackageVersion();
+%>
+
+
+<% e.begin_define_block("title"); %>Plugin information - Carabiner<% e.end_define_block(); %>
+
+<% e.begin_define_block("body-content"); %>
+
+  <%
+    var plugins = require("ep_carabiner/static/js/plugins");
+  %>
+
+  <h2>Carabiner version</h2>
+  <p>Version number: <%= pkgVersion %></p>
+  <p>Git sha: <a href='https://github.com/redhog/ep_carabiner/commit/<%= gitCommit %>'><%= gitCommit %></a></p>
+
+  <h2>Installed plugins</h2>
+  <pre><%- plugins.formatPlugins().replace(", ","\n") %></pre>
+
+  <h2>Installed parts</h2>
+  <pre><%= plugins.formatParts() %></pre>
+
+  <h2>Installed hooks</h2>
+  <h3>Server side hooks</h3>
+  <div><%- plugins.formatHooks() %></div>
+
+  <h3>Client side hooks</h3>
+  <div><%- plugins.formatHooks("client_hooks") %></div>
+<% e.end_define_block(); %>

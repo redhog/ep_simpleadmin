@@ -1,0 +1,13 @@
+{
+  "parts": [
+    { "name": "adminPlugins", "pre": ["ep_express/pages"],
+      "hooks": {
+        "socketio": "ep_simpleadmin/node/hooks/express/adminplugins:socketio" },
+      "client_hooks": {
+        "documentReadyAdminPlugins": "ep_simpleadmin/static/js/hooks/admin/plugins:documentReadyAdminPlugins" },
+      "urlmap": {
+        "/admin/plugins": "ep_simpleadmin/templates/admin/plugins.html",
+        "/admin/plugins/info": "ep_simpleadmin/templates/admin/plugins-info.html"
+      } }
+  ]
+}
