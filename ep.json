@@ -6,14 +6,7 @@
       "urlmap": {
         "/admin/plugins": "ep_simpleadmin/templates/admin/plugins.html",
         "/admin/plugins/info": "ep_simpleadmin/templates/admin/plugins-info.html"
-      },
-      "iomap": {
-        "/pluginfw/installer:getInstalled": "ep_simpleadmin/node/hooks/express/adminplugins:getInstalled",
-        "/pluginfw/installer:checkUpdates": "ep_simpleadmin/node/hooks/express/adminplugins:checkUpdates",
-        "/pluginfw/installer:getAvailable": "ep_simpleadmin/node/hooks/express/adminplugins:getAvailable",
-        "/pluginfw/installer:search": "ep_simpleadmin/node/hooks/express/adminplugins:search",
-        "/pluginfw/installer:install": "ep_simpleadmin/node/hooks/express/adminplugins:install",
-        "/pluginfw/installer:uninstall": "ep_simpleadmin/node/hooks/express/adminplugins:uninstall"
-       } }
+      }
+    }
   ]
 }

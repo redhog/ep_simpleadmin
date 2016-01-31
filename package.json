@@ -7,7 +7,8 @@
   "contributors"   : [],
   "dependencies"   : {
                       "underscore"              : "1.8.3",
-                      "semver"                  : "0.0.1"
+                      "semver"                  : "0.0.1",
+                      "ep_plugin_admin_server"  : ">=0.0.1",
                      },
   "bin":             { },
   "devDependencies": {
